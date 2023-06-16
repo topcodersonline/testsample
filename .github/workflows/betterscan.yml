@@ -30,7 +30,4 @@ jobs:
         with:
           name: state
           path: .checkmate
-      - name: Upload the SARIF file
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: report.sarif
+  
