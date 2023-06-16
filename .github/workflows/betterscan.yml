@@ -24,7 +24,7 @@ jobs:
           name: state
           path: .checkmate
       - name: Get state
-        uses: actions/download-artifact@v2
+        uses:  actions/download-artifact@v2.1.1
         with:
           name: state
       - name: Betterscan Scan
