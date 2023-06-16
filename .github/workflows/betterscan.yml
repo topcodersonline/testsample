@@ -17,6 +17,7 @@ jobs:
       - name: Create folder
         run: |
           mkdir .checkmate
+          touch .checkmate/dummy
       - name: Store state
         uses: actions/upload-artifact@v2
         with:
