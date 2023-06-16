@@ -18,6 +18,8 @@ jobs:
         run: |
           mkdir .checkmate
           touch .checkmate/dummy
+          tree
+          ls -la
       - name: Store state
         uses: actions/upload-artifact@v3.1.2
         with:
