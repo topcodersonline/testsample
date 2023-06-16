@@ -17,9 +17,9 @@ jobs:
       - name: Create folder
         run: |
           mkdir .checkmate
-          touch .checkmate/dummy
+          touch .checkmate/config.json
       - name: Store state
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: state
           path: .checkmate
@@ -30,7 +30,7 @@ jobs:
       - name: Betterscan Scan
         uses: topcodersonline/betterscan@v3
       - name: Store state
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: state
           path: .checkmate
