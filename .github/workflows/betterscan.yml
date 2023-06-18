@@ -14,20 +14,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: xSAVIKx/artifact-exists-action@v0
-        id: state_artifact
-        with:
-          name: state
-      - name: Get state
-        uses:  actions/download-artifact@v2.1.1
-        if: steps.state_artifact.outputs.exists == true
-        with:
-          name: state
       - name: Betterscan Scan
         uses: topcodersonline/betterscan@v3
-      - name: Store state
-        uses: actions/upload-artifact@v3.1.2
+      - name: Upload the SARIF file
+        uses: github/codeql-action/upload-sarif@v2
         with:
-          name: state
-          path: .checkmate
-  
+          sarif_file: report.sarif
